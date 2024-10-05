@@ -1,4 +1,4 @@
-package nyn.org.userservice.security;
+package nyn.org.userservice.security.services;
 
 import nyn.org.userservice.model.User;
 import nyn.org.userservice.repository.UserRepository;
