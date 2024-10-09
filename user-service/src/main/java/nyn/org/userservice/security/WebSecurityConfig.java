@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import nyn.org.userservice.security.jwt.AuthEntryPointJwt;
 import nyn.org.userservice.security.jwt.AuthTokenFilter;
 import nyn.org.userservice.security.services.UserDetailsServiceImpl;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +34,10 @@ public class WebSecurityConfig  {
         return new AuthTokenFilter();
     }
 
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

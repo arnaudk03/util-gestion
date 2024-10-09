@@ -15,10 +15,10 @@ import java.util.Date;
 public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("${gestion.app.jwtSecret}")
+    @Value("${user-service.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${gestion.app.jwtExpirationMs}")
+    @Value("${user-service.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
     // Générer un token JWT en utilisant l'objet Authentication
